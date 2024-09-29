@@ -181,8 +181,8 @@ export default function TowingCompanyApp() {
               </p>
               <p>
                 We understand that vehicle breakdowns and accidents can be
-                stressful, which is why we&apos;re available 24/7 to help you get
-                back on the road as quickly as possible. With our
+                stressful, which is why we&apos;re available 24/7 to help you
+                get back on the road as quickly as possible. With our
                 state-of-the-art equipment and highly trained staff, you can
                 trust Quick Tow for all your towing needs.
               </p>
@@ -196,7 +196,6 @@ export default function TowingCompanyApp() {
             <h2 className="text-3xl font-bold mb-12 text-center">
               Cost estimator
             </h2>
-            
           </div>
         </section>
 
