@@ -181,7 +181,7 @@ export default function TowingCompanyApp() {
               </p>
               <p>
                 We understand that vehicle breakdowns and accidents can be
-                stressful, which is why we're available 24/7 to help you get
+                stressful, which is why we&apos;re available 24/7 to help you get
                 back on the road as quickly as possible. With our
                 state-of-the-art equipment and highly trained staff, you can
                 trust Quick Tow for all your towing needs.
@@ -194,44 +194,9 @@ export default function TowingCompanyApp() {
         <section id="testimonials" className="py-20">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-bold mb-12 text-center">
-              What Our Customers Say
+              Cost estimator
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <Card>
-                <CardContent className="p-6">
-                  <div className="flex items-center mb-4">
-                    <Star className="h-5 w-5 text-yellow-400" />
-                    <Star className="h-5 w-5 text-yellow-400" />
-                    <Star className="h-5 w-5 text-yellow-400" />
-                    <Star className="h-5 w-5 text-yellow-400" />
-                    <Star className="h-5 w-5 text-yellow-400" />
-                  </div>
-                  <p className="mb-4">
-                    "Quick Tow saved my day! They arrived within 20 minutes of
-                    my call and got my car running in no time. Highly
-                    recommended!"
-                  </p>
-                  <p className="font-semibold">- Sarah M.</p>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardContent className="p-6">
-                  <div className="flex items-center mb-4">
-                    <Star className="h-5 w-5 text-yellow-400" />
-                    <Star className="h-5 w-5 text-yellow-400" />
-                    <Star className="h-5 w-5 text-yellow-400" />
-                    <Star className="h-5 w-5 text-yellow-400" />
-                    <Star className="h-5 w-5 text-yellow-400" />
-                  </div>
-                  <p className="mb-4">
-                    "Professional and courteous service. The driver was very
-                    helpful and explained everything clearly. I'll definitely
-                    use Quick Tow again if needed."
-                  </p>
-                  <p className="font-semibold">- John D.</p>
-                </CardContent>
-              </Card>
-            </div>
+            
           </div>
         </section>
 
