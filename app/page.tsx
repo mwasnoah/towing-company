@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
-import { MenuIcon, X, Truck, Clock, Star } from "lucide-react";
+import { MenuIcon, X, Truck, Clock } from "lucide-react";
 import Link from "next/link";
 
 export default function TowingCompanyApp() {
