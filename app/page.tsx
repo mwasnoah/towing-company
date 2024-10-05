@@ -23,7 +23,7 @@ export default function TowingCompanyApp() {
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center">
               <Truck className="h-8 w-8 text-primary" />
-              <span className="ml-2 text-xl font-bold">Quick Tow</span>
+              <span className="ml-2 text-xl font-bold">Towing Guru</span>
             </div>
             <nav className="hidden md:block">
               <ul className="flex space-x-4">
@@ -114,6 +114,13 @@ export default function TowingCompanyApp() {
       )}
 
       <main>
+      <section id="testimonials" className="py-20">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl font-bold mb-12 text-center">
+              Cost estimator
+            </h2>
+          </div>
+        </section>
         {/* Hero Section */}
         <section className="py-20 bg-primary text-primary-foreground">
           <div className="container mx-auto px-4">
@@ -123,7 +130,7 @@ export default function TowingCompanyApp() {
                 Fast, reliable, and professional towing when you need it most.
               </p>
               <Button size="lg" variant="secondary">
-                Call Now: (123) 456-7890
+                Call Now: +1 469-258-5101
               </Button>
             </div>
           </div>
@@ -171,11 +178,11 @@ export default function TowingCompanyApp() {
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto">
               <h2 className="text-3xl font-bold mb-6 text-center">
-                About Quick Tow
+                About Towing Guru
               </h2>
               <p className="mb-4">
-                Quick Tow has been providing reliable towing and roadside
-                assistance services for over 20 years. Our team of experienced
+                Towing Guru has been providing reliable towing and roadside
+                assistance services. Our team of experienced
                 professionals is committed to delivering fast, efficient, and
                 friendly service to our customers.
               </p>
@@ -184,20 +191,14 @@ export default function TowingCompanyApp() {
                 stressful, which is why we&apos;re available 24/7 to help you
                 get back on the road as quickly as possible. With our
                 state-of-the-art equipment and highly trained staff, you can
-                trust Quick Tow for all your towing needs.
+                trust Towing Guru for all your towing needs.
               </p>
             </div>
           </div>
         </section>
 
         {/* Testimonials Section */}
-        <section id="testimonials" className="py-20">
-          <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold mb-12 text-center">
-              Cost estimator
-            </h2>
-          </div>
-        </section>
+        
 
         {/* Contact Section */}
         <section id="contact" className="py-20 bg-muted">
@@ -224,10 +225,10 @@ export default function TowingCompanyApp() {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-4 md:mb-0">
               <Truck className="h-8 w-8 inline-block mr-2" />
-              <span className="text-xl font-bold">Quick Tow</span>
+              <span className="text-xl font-bold">Towing Guru</span>
             </div>
             <div>
-              <p>&copy; 2023 Quick Tow. All rights reserved.</p>
+              <p>&copy; 2024 Towing Guru. All rights reserved.</p>
             </div>
           </div>
         </div>
