@@ -10,9 +10,15 @@ import Link from "next/link";
 
 export default function TowingCompanyApp() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [cost, setCost] = useState(0);
+  const [dropOfLocation, setDropOfLocation] = useState("");
 
+  const [pickUpLocation, setpickUpLocation] = useState("");
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
+  };
+  const calculateCost = () => {
+    setCost(93);
   };
 
   return (
@@ -38,7 +44,7 @@ export default function TowingCompanyApp() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="#services">
+                  <Link href="#cost estimator">
                     <Button variant="ghost">Cost estimator</Button>
                   </Link>
                 </li>
@@ -114,11 +120,42 @@ export default function TowingCompanyApp() {
       )}
 
       <main>
-      <section id="testimonials" className="py-20">
+        <section id="testimonials" className="py-20">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-bold mb-12 text-center">
               Cost estimator
             </h2>
+
+            <Input
+              value={pickUpLocation}
+              onChange={(e) => {
+                setpickUpLocation(e.target.value);
+              }}
+              className="m-2 max-w-64"
+              type="teit mostxt"
+              placeholder="Pickup location"
+              required
+            />
+            <Input
+              value={dropOfLocation}
+              onChange={(e) => {
+                setDropOfLocation(e.target.value);
+              }}
+              className="m-2 max-w-64"
+              type="email"
+              placeholder="Drop of location"
+              required
+            />
+            <p className="text-xl m-2">Cost:{cost}</p>
+
+            <Button
+              onClick={() => {
+                calculateCost();
+              }}
+              className="m-2"
+            >
+              Calculate
+            </Button>
           </div>
         </section>
         {/* Hero Section */}
@@ -182,9 +219,9 @@ export default function TowingCompanyApp() {
               </h2>
               <p className="mb-4">
                 Towing Guru has been providing reliable towing and roadside
-                assistance services. Our team of experienced
-                professionals is committed to delivering fast, efficient, and
-                friendly service to our customers.
+                assistance services. Our team of experienced professionals is
+                committed to delivering fast, efficient, and friendly service to
+                our customers.
               </p>
               <p>
                 We understand that vehicle breakdowns and accidents can be
@@ -198,7 +235,6 @@ export default function TowingCompanyApp() {
         </section>
 
         {/* Testimonials Section */}
-        
 
         {/* Contact Section */}
         <section id="contact" className="py-20 bg-muted">
