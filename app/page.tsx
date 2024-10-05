@@ -167,7 +167,9 @@ export default function TowingCompanyApp() {
                 Fast, reliable, and professional towing when you need it most.
               </p>
               <Button size="lg" variant="secondary">
-                Call Now: +1 469-258-5101
+                <Link href="tel:+1 469-258-5101">
+                  Call Now: +1 469-258-5101
+                </Link>
               </Button>
             </div>
           </div>
