@@ -120,8 +120,13 @@ export default function TowingCompanyApp() {
       )}
 
       <main>
+        <div className="grid place-items-center">
+          <Button size="sm" variant="secondary" className="m-2 bg-[#020617]">
+            <Link className="text-white hover:text-[#be123c]" href="tel:+1 469-258-5101">Call Now: +1 469-258-5101</Link>
+          </Button>
+        </div>
         <section id="testimonials" className="py-20">
-          <div className="container mx-auto px-4">
+          <div className="container flex flex-col mx-auto px-4">
             <h2 className="text-3xl font-bold mb-12 text-center">
               Cost estimator
             </h2>
@@ -149,10 +154,12 @@ export default function TowingCompanyApp() {
             <p className="text-xl m-2">Cost:{cost}</p>
 
             <Button
+            size="sm"
+            
               onClick={() => {
                 calculateCost();
               }}
-              className="m-2"
+              className="m-2 bg-black w-64"
             >
               Calculate
             </Button>
