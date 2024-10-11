@@ -29,7 +29,7 @@ export default function TowingCompanyApp() {
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center">
               <Truck className="h-8 w-8 text-primary" />
-              <span className="ml-2 text-xl font-bold">Towing Guru</span>
+              <span className="ml-2 text-xl font-bold">TOWING GURU</span>
             </div>
             <nav className="hidden md:block">
               <ul className="flex space-x-4">
