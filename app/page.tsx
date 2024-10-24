@@ -1,24 +1,75 @@
 "use client";
 
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Card, CardContent } from "@/components/ui/card";
 import { MenuIcon, X, Truck, Clock, Star } from "lucide-react";
 import Link from "next/link";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { Label } from "@/components/ui/label";
+import { MapPin, CalculatorIcon } from "lucide-react";
 
 export default function TowingCompanyApp() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [cost, setCost] = useState(0);
-  const [dropOfLocation, setDropOfLocation] = useState("");
+  const [pickup, setPickup] = useState("");
+  const [destination, setDestination] = useState("");
+  const [distance, setDistance] = useState<number | null>(22);
+  const [error, setError] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
-  const [pickUpLocation, setpickUpLocation] = useState("");
+  const handleCalculate = () => {
+    if (!pickup || !destination) {
+      setError("Please enter both pickup and destination addresses.");
+      return;
+    }
+
+    setError("");
+    setIsLoading(true);
+    const url = new URL(
+      "https://maps.googleapis.com/maps/api/distancematrix/json",
+    );
+    url.searchParams.append("destinations", destination);
+
+    url.searchParams.append("origins", pickup);
+
+    url.searchParams.append("units", "imperial");
+
+    url.searchParams.append("key", "AIzaSyBeW7Tg8CA95nddhZVv5G7dCQB7wMNpmYQ");
+    console.log(url.href);
+    fetch(url.href, {})
+      .then((data) => data.json())
+      .then((data) => {
+        setIsLoading(false);
+        console.log(data);
+        console.log(
+          Number(data.rows[0].elements[0].distance.text.split(" ")[0]) * 3 + 85,
+        );
+        setDistance(
+          Number(data.rows[0].elements[0].distance.text.split(" ")[0]),
+        );
+        setCost(
+          Number(data.rows[0].elements[0].distance.text.split(" ")[0]) * 3 + 85,
+        );
+        console.log(distance);
+      })
+      .catch((e) => {
+        console.error(e);
+
+        setIsLoading(false);
+      });
+    // Simulating an API call with setTimeout
+  };
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
-  };
-  const calculateCost = () => {
-    setCost(93);
   };
 
   return (
@@ -122,7 +173,12 @@ export default function TowingCompanyApp() {
       <main>
         <div className="grid place-items-center">
           <Button size="sm" variant="secondary" className="m-2 bg-[#020617]">
-            <Link className="text-white hover:text-[#be123c]" href="tel:+1 469-258-5101">Call Now: +1 469-258-5101</Link>
+            <Link
+              className="text-white hover:text-[#be123c]"
+              href="tel:+1 469-258-5101"
+            >
+              Call Now: +1 469-258-5101
+            </Link>
           </Button>
         </div>
         <section id="testimonials" className="py-20">
@@ -130,39 +186,67 @@ export default function TowingCompanyApp() {
             <h2 className="text-3xl font-bold mb-12 text-center">
               Cost estimator
             </h2>
-
-            <Input
-              value={pickUpLocation}
-              onChange={(e) => {
-                setpickUpLocation(e.target.value);
-              }}
-              className="m-2 max-w-64"
-              type="teit mostxt"
-              placeholder="Pickup location"
-              required
-            />
-            <Input
-              value={dropOfLocation}
-              onChange={(e) => {
-                setDropOfLocation(e.target.value);
-              }}
-              className="m-2 max-w-64"
-              type="email"
-              placeholder="Drop of location"
-              required
-            />
-            <p className="text-xl m-2">Cost:{cost}</p>
-
-            <Button
-            size="sm"
-            
-              onClick={() => {
-                calculateCost();
-              }}
-              className="m-2 bg-black w-64"
-            >
-              Calculate
-            </Button>
+            <Card className="w-full max-w-md mx-auto">
+              <CardHeader>
+                <CardTitle>Cost Estimator</CardTitle>
+                <CardDescription>
+                  Calculate the Cost between two addresses
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="space-y-2">
+                  <Label htmlFor="pickup">Pickup Address</Label>
+                  <div className="relative">
+                    <MapPin className="absolute left-2 top-3 h-4 w-4 text-muted-foreground" />
+                    <Input
+                      id="pickup"
+                      placeholder="Enter pickup address"
+                      value={pickup}
+                      onChange={(e) => setPickup(e.target.value)}
+                      className="pl-8"
+                    />
+                  </div>
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="destination">Destination Address</Label>
+                  <div className="relative">
+                    <MapPin className="absolute left-2 top-3 h-4 w-4 text-muted-foreground" />
+                    <Input
+                      id="destination"
+                      placeholder="Enter destination address"
+                      value={destination}
+                      onChange={(e) => setDestination(e.target.value)}
+                      className="pl-8"
+                    />
+                  </div>
+                </div>
+                {error && <p className="text-sm text-red-500">{error}</p>}
+                <Button
+                  onClick={handleCalculate}
+                  disabled={isLoading}
+                  className="w-full"
+                >
+                  {isLoading ? (
+                    "Calculating..."
+                  ) : (
+                    <>
+                      <CalculatorIcon className="mr-2 h-4 w-4" /> Calculate
+                      Distance
+                    </>
+                  )}
+                </Button>
+              </CardContent>
+              {distance !== null && (
+                <CardFooter>
+                  <div className="w-full text-center">
+                    <p className="text-lg font-semibold">Estimated Cost:</p>
+                    <p className="text-3xl font-bold text-primary">
+                      {cost.toFixed(2)} $
+                    </p>
+                  </div>
+                </CardFooter>
+              )}
+            </Card>{" "}
           </div>
         </section>
         {/* Hero Section */}
