@@ -61,7 +61,7 @@ export default function TowingCompanyApp() {
             data.googleData.rows[0].elements[0].distance.text.split(" ")[0],
           ) *
             3 +
-            85,
+            115,
         );
       })
       .catch((e) => {
