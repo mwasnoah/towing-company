@@ -42,30 +42,33 @@ export default function TowingCompanyApp() {
     url.searchParams.append("origins", pickup);
 
     url.searchParams.append("units", "imperial");
-
+    const formdata = new FormData();
     url.searchParams.append("key", "AIzaSyBeW7Tg8CA95nddhZVv5G7dCQB7wMNpmYQ");
-    console.log(url.href);
-    fetch(url.href, {})
+
+    formdata.append("url", url.href);
+    fetch("/api/google-api", { method: "POST", body: formdata })
       .then((data) => data.json())
       .then((data) => {
+        console.log({ data });
         setIsLoading(false);
-        console.log(data);
-        console.log(
-          Number(data.rows[0].elements[0].distance.text.split(" ")[0]) * 3 + 85,
-        );
         setDistance(
-          Number(data.rows[0].elements[0].distance.text.split(" ")[0]),
+          Number(
+            data.googleData.rows[0].elements[0].distance.text.split(" ")[0],
+          ),
         );
         setCost(
-          Number(data.rows[0].elements[0].distance.text.split(" ")[0]) * 3 + 85,
+          Number(
+            data.googleData.rows[0].elements[0].distance.text.split(" ")[0],
+          ) *
+            3 +
+            85,
         );
-        console.log(distance);
       })
       .catch((e) => {
-        console.error(e);
-
         setIsLoading(false);
+        console.error(e);
       });
+    console.log(url.href);
     // Simulating an API call with setTimeout
   };
   const toggleMobileMenu = () => {
