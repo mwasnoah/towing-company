@@ -251,6 +251,17 @@ export default function TowingCompanyApp() {
               )}
             </Card>{" "}
           </div>
+
+          <div className="grid place-items-center my-5">
+            <Button size="sm" variant="secondary" className="m-2 bg-[#020617]">
+              <Link
+                className="text-white hover:text-[#be123c]"
+                href="tel:+1 469-258-5101"
+              >
+                Call Now: +1 469-258-5101
+              </Link>
+            </Button>
+          </div>
         </section>
         {/* Hero Section */}
         <section className="py-20 bg-primary text-primary-foreground">
