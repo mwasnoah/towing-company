@@ -83,7 +83,7 @@ export default function TowingCompanyApp() {
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center">
               <Truck className="h-8 w-8 text-primary" />
-              <span className="ml-2 text-xl font-bold">TOWING GURU</span>
+              <span className="ml-2 text-xl font-bold">Towing Guru</span>
             </div>
             <nav className="hidden md:block">
               <ul className="flex space-x-4">
@@ -358,8 +358,9 @@ export default function TowingCompanyApp() {
                     <Star className="h-5 w-5 text-yellow-400" />
                   </div>
                   <p className="mb-4">
-                    Quick Tow saved my day! They arrived within 20 minutes of my
-                    call and got my car running in no time. Highly recommended!
+                    Towing Guru saved my day! They arrived within 20 minutes of
+                    my call and got my car running in no time. Highly
+                    recommended!
                   </p>
                   <p className="font-semibold">- Sarah M.</p>
                 </CardContent>
@@ -376,7 +377,7 @@ export default function TowingCompanyApp() {
                   <p className="mb-4">
                     Professional and courteous service. The driver was very
                     helpful and explained everything clearly. I&lsquo;ll
-                    definitely use Quick Tow again if needed.
+                    definitely use Towing Guru again if needed.
                   </p>
                   <p className="font-semibold">- John D.</p>
                 </CardContent>
