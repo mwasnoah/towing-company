@@ -184,9 +184,9 @@ export default function TowingCompanyApp() {
             </Link>
           </Button>
         </div>
-        <section id="testimonials" className="py-20">
+        <section id="costestimator" className="py-20 bg-tow-truck bg-cover">
           <div className="container flex flex-col mx-auto px-4">
-            <h2 className="text-3xl font-bold mb-12 text-center">
+            <h2 className="text-3xl font-bold mb-12 text-center text-white">
               Cost estimator
             </h2>
             <Card className="w-full max-w-md mx-auto">
@@ -271,7 +271,7 @@ export default function TowingCompanyApp() {
               <p className="text-xl mb-8">
                 Fast, reliable, and professional towing when you need it most.
               </p>
-              <Button size="lg" variant="secondary">
+              <Button className="m-2" size="lg" variant="secondary">
                 <Link href="tel:+1 469-258-5101">
                   Call Now: +1 469-258-5101
                 </Link>
