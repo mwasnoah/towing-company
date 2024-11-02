@@ -61,7 +61,7 @@ export default function TowingCompanyApp() {
             data.googleData.rows[0].elements[0].distance.text.split(" ")[0],
           ) *
             3 +
-            115,
+            105,
         );
       })
       .catch((e) => {
@@ -186,9 +186,9 @@ export default function TowingCompanyApp() {
         </div>
         <section
           id="costestimator"
-          className="py-20 bg-tow-truck bg-cover bg-no-repeat"
+          className=" py-20 sm:bg-tow-truck sm:bg-cotain bg-mobile-tow-truck bg-cover bg-no-repeat"
         >
-          <div className="container flex flex-col mx-auto px-4">
+          <div className="opacity-85 container flex flex-col mx-auto px-4">
             <h2 className="text-3xl font-bold mb-12 text-center text-white">
               Cost estimator
             </h2>

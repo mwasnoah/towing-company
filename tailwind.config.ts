@@ -12,6 +12,9 @@ const config: Config = {
       backgroundImage: {
         "tow-truck":
           "url('../public/WhatsApp Image 2024-10-29 at 20.32.35.jpeg')",
+
+        "mobile-tow-truck":
+          "url('../public/WhatsApp Image 2024-11-02 at 13.46.55.jpeg')",
       },
       colors: {
         background: "hsl(var(--background))",
