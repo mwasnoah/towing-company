@@ -184,7 +184,7 @@ export default function TowingCompanyApp() {
             </Link>
           </Button>
         </div>
-        <section id="costestimator" className="py-20 bg-tow-truck bg-cover">
+        <section id="costestimator" className="py-20 bg-tow-truck bg-contain bg-no-repeat">
           <div className="container flex flex-col mx-auto px-4">
             <h2 className="text-3xl font-bold mb-12 text-center text-white">
               Cost estimator
